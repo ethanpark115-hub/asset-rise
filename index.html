@@ -1,0 +1,1870 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="에이알자산관리 - 중소기업 종합 경영컨설팅 - 법인설립, 세금절세, 정부지원사업, 기업인증, 스마트팩토리, ESG경영">
+<title>에이알자산관리 | 기업 경영컨설팅</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0d0d0d;
+  --ink-2: #1a1a2e;
+  --cream: #f7f4ef;
+  --cream-2: #ede9e0;
+  --gold: #b8935a;
+  --gold-lt: #d4aa78;
+  --accent: #1a4d8f;
+  --accent-2: #2563b0;
+  --white: #ffffff;
+  --gray: #8a8a8a;
+  --border: rgba(0,0,0,0.08);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+/* ─── NOISE TEXTURE OVERLAY ─── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+}
+
+/* ─── HEADER ─── */
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 0 3rem;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(247,244,239,0.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.4s;
+}
+
+.logo {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.logo-em {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  color: var(--ink);
+  letter-spacing: -0.5px;
+}
+
+.logo-kr {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--gold);
+  letter-spacing: 1px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+nav a {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 0 18px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.2px;
+  position: relative;
+  transition: color 0.2s;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 18px; right: 18px;
+  height: 1.5px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+nav a:hover { color: var(--gold); }
+nav a:hover::after { transform: scaleX(1); }
+
+.nav-cta {
+  margin-left: 16px;
+  background: var(--ink) !important;
+  color: var(--cream) !important;
+  border-radius: 4px;
+  padding: 0 22px !important;
+  height: 40px !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.2px;
+  transition: background 0.2s !important;
+}
+
+.nav-cta:hover { background: var(--accent) !important; color: white !important; }
+.nav-cta::after { display: none !important; }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+}
+.hamburger span { width: 22px; height: 1.5px; background: var(--ink); border-radius: 2px; transition: 0.3s; }
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 68px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-left {
+  background: var(--ink-2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8rem 5rem 8rem 6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-left::before {
+  content: '';
+  position: absolute;
+  top: -20%; left: -10%;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(26,77,143,0.3) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-left::after {
+  content: '';
+  position: absolute;
+  bottom: -10%; right: -10%;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(184,147,90,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-label::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+  line-height: 1.1;
+  color: var(--white);
+  letter-spacing: -1px;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold-lt);
+}
+
+.hero-desc {
+  font-size: 15px;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 3rem;
+  font-weight: 300;
+  max-width: 400px;
+  position: relative;
+  z-index: 1;
+  letter-spacing: -0.1px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 14px 30px;
+  border-radius: 4px;
+  text-decoration: none;
+  letter-spacing: -0.2px;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-gold:hover { background: var(--gold-lt); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(184,147,90,0.3); }
+
+.btn-ghost {
+  background: transparent;
+  color: rgba(255,255,255,0.7);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 14px 28px;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-ghost:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.35);
+  color: white;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  position: relative;
+  z-index: 1;
+}
+
+.hstat-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.2rem;
+  color: white;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.hstat-num span { color: var(--gold); font-size: 1.1rem; }
+.hstat-label { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 5px; }
+
+.hero-right {
+  background: var(--cream);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-visual {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 4rem 2rem;
+  position: relative;
+}
+
+/* Decorative arch element */
+.hero-arch {
+  width: 280px;
+  height: 380px;
+  border: 1.5px solid rgba(0,0,0,0.12);
+  border-radius: 140px 140px 0 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-arch-fill {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, var(--cream-2) 0%, var(--cream) 100%);
+  border-radius: inherit;
+}
+
+.hero-arch-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.arch-icon { font-size: 4rem; margin-bottom: 1rem; display: block; }
+
+.arch-text {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.7;
+}
+
+.arch-sub {
+  font-size: 12px;
+  color: var(--gray);
+  margin-top: 0.5rem;
+  letter-spacing: 0.3px;
+}
+
+/* Floating ticker */
+.hero-ticker {
+  background: var(--ink-2);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow: hidden;
+}
+
+.ticker-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  white-space: nowrap;
+  text-transform: uppercase;
+  padding-right: 2rem;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  margin-right: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.live-dot {
+  width: 6px; height: 6px;
+  background: #4ade80;
+  border-radius: 50%;
+  animation: blink 1.5s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.ticker-scroll {
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.ticker-inner {
+  display: inline-flex;
+  gap: 3rem;
+  animation: ticker 20s linear infinite;
+}
+
+.ticker-item {
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ticker-item strong { color: var(--gold-lt); }
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ─── SECTION COMMON ─── */
+.section-wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+.section-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-eyebrow::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+.section-heading {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -1px;
+  color: var(--ink);
+}
+
+.section-heading em { font-style: italic; color: var(--accent); }
+
+.section-note {
+  font-size: 15px;
+  color: var(--gray);
+  line-height: 1.8;
+  font-weight: 300;
+  max-width: 480px;
+}
+
+/* ─── CASES ─── */
+.cases-section {
+  padding: 120px 0;
+  background: var(--cream);
+}
+
+.cases-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+  gap: 2rem;
+}
+
+.cases-nav-btns {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.nav-btn {
+  width: 46px; height: 46px;
+  border: 1px solid var(--border);
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.nav-btn:hover { background: var(--ink); color: white; border-color: var(--ink); }
+
+.cases-grid {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding-bottom: 1rem;
+}
+
+.cases-grid::-webkit-scrollbar { display: none; }
+
+.case-card {
+  flex: 0 0 300px;
+  scroll-snap-align: start;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.case-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(0,0,0,0.1); }
+
+.case-top {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  position: relative;
+}
+
+.case-badge {
+  position: absolute;
+  top: 12px; right: 12px;
+  background: var(--gold);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 50px;
+  letter-spacing: 0.5px;
+}
+
+.case-body { padding: 1.5rem; }
+
+.case-industry {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.case-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.8rem;
+  letter-spacing: -0.3px;
+}
+
+.case-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 1rem; }
+
+.ctag {
+  background: var(--cream);
+  font-size: 11px;
+  color: var(--gray);
+  padding: 3px 9px;
+  border-radius: 50px;
+  border: 1px solid var(--border);
+  font-weight: 500;
+}
+
+.case-result {
+  background: var(--ink-2);
+  color: rgba(255,255,255,0.8);
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.case-result strong { color: var(--gold-lt); }
+
+/* ─── SERVICES ─── */
+.services-section {
+  padding: 120px 0;
+  background: var(--ink-2);
+  position: relative;
+  overflow: hidden;
+}
+
+.services-section::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 600px; height: 600px;
+  border: 1px solid rgba(184,147,90,0.1);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.services-section::after {
+  content: '';
+  position: absolute;
+  bottom: -150px; left: -100px;
+  width: 500px; height: 500px;
+  border: 1px solid rgba(26,77,143,0.2);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.services-section .section-heading { color: white; }
+.services-section .section-note { color: rgba(255,255,255,0.45); }
+
+.services-header {
+  margin-bottom: 4rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.svc-item {
+  background: rgba(255,255,255,0.02);
+  padding: 3rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background 0.3s;
+  border-radius: 0;
+}
+
+.svc-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(26,77,143,0.15), rgba(184,147,90,0.05));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.svc-item:hover { background: rgba(255,255,255,0.04); }
+.svc-item:hover::before { opacity: 1; }
+
+.svc-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.svc-icon {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.svc-item:hover .svc-icon { transform: scale(1.1) rotate(5deg); }
+
+.svc-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.8rem;
+  letter-spacing: -0.4px;
+}
+
+.svc-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.7;
+}
+
+.svc-arrow {
+  position: absolute;
+  bottom: 2rem; right: 2rem;
+  color: rgba(255,255,255,0.12);
+  font-size: 1.4rem;
+  transition: all 0.3s;
+}
+
+.svc-item:hover .svc-arrow { color: var(--gold); transform: translate(4px, -4px); }
+
+/* ─── ABOUT ─── */
+.about-section {
+  padding: 120px 0;
+  background: white;
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8rem;
+  align-items: center;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.astat {
+  background: var(--cream);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transition: background 0.25s;
+}
+
+.astat:first-child {
+  background: var(--ink-2);
+}
+
+.astat:hover { background: var(--cream-2); }
+.astat:first-child:hover { background: var(--accent); }
+
+.astat-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.8rem;
+  color: var(--accent);
+  letter-spacing: -2px;
+  line-height: 1;
+}
+
+.astat-unit {
+  font-size: 1.2rem;
+  letter-spacing: 0;
+}
+
+.astat:first-child .astat-num { color: var(--gold-lt); }
+
+.astat-label {
+  font-size: 12px;
+  color: var(--gray);
+  margin-top: 6px;
+  letter-spacing: 0.3px;
+}
+
+.astat:first-child .astat-label { color: rgba(255,255,255,0.4); }
+
+.about-text-wrap { }
+.about-text-wrap .section-eyebrow { margin-bottom: 1.5rem; }
+.about-text-wrap .section-heading { margin-bottom: 1.5rem; }
+
+.about-para {
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--gray);
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+}
+
+.about-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.alink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.25s;
+  gap: 12px;
+}
+
+.alink:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(184,147,90,0.04);
+  transform: translateX(6px);
+}
+
+.alink-icon { font-size: 1.1rem; }
+
+/* Partners */
+.partners-row {
+  margin-top: 5rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--border);
+}
+
+.partners-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.partners-scroll {
+  overflow: hidden;
+  display: flex;
+  gap: 0;
+}
+
+.partners-inner {
+  display: flex;
+  gap: 1.5rem;
+  overflow: hidden;
+}
+
+.p-logo {
+  flex: 0 0 auto;
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 9px 18px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gray);
+  white-space: nowrap;
+}
+
+/* ─── PROCESS ─── */
+.process-section {
+  padding: 120px 0;
+  background: var(--cream);
+}
+
+.process-layout {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  position: relative;
+  margin-top: 4rem;
+}
+
+.process-layout::before {
+  content: '';
+  position: absolute;
+  top: 36px; left: 8%; right: 8%;
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent), var(--gold));
+  z-index: 0;
+}
+
+.proc-step {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  padding: 0 1rem;
+  transition: transform 0.25s;
+}
+
+.proc-step:hover { transform: translateY(-4px); }
+
+.proc-num {
+  width: 72px; height: 72px;
+  background: white;
+  border: 1.5px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 14px;
+  color: var(--accent);
+  transition: all 0.3s;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+
+.proc-step:hover .proc-num {
+  background: var(--ink-2);
+  color: var(--gold-lt);
+  border-color: var(--ink-2);
+}
+
+.proc-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.3px;
+}
+
+.proc-desc {
+  font-size: 12px;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+/* ─── NOTICE + FORM ─── */
+.notice-section {
+  padding: 100px 0;
+  background: white;
+}
+
+.notice-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.notice-box {
+  border-radius: 12px;
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.nb-dark {
+  background: var(--ink-2);
+}
+
+.nb-light {
+  background: var(--cream);
+  border: 1px solid var(--border);
+}
+
+.nb-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  letter-spacing: -0.5px;
+}
+
+.nb-dark .nb-title { color: white; }
+.nb-light .nb-title { color: var(--ink); }
+
+.notice-list { list-style: none; }
+
+.notice-list li {
+  padding: 13px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: rgba(255,255,255,0.65);
+  transition: color 0.2s;
+}
+
+.notice-list li:hover { color: var(--gold-lt); }
+.notice-list li:last-child { border-bottom: none; }
+
+.ndate {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: rgba(255,255,255,0.3);
+  white-space: nowrap;
+}
+
+.btn-outline-gold {
+  display: inline-block;
+  margin-top: 1.5rem;
+  color: var(--gold-lt);
+  border: 1px solid rgba(184,147,90,0.4);
+  padding: 10px 22px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s;
+}
+
+.btn-outline-gold:hover {
+  background: rgba(184,147,90,0.12);
+  border-color: var(--gold-lt);
+}
+
+/* Form */
+.form-stack { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+
+.finput {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: var(--ink);
+  background: white;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.finput:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(26,77,143,0.08);
+}
+
+.ftextarea { resize: vertical; min-height: 90px; }
+
+.fcheck {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--gray);
+  cursor: pointer;
+}
+
+.fcheck input[type=checkbox] {
+  accent-color: var(--accent);
+  width: 15px; height: 15px;
+  cursor: pointer;
+}
+
+.fsubmit {
+  width: 100%;
+  background: var(--ink-2);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: 'Noto Sans KR', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s;
+  letter-spacing: -0.3px;
+}
+
+.fsubmit:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(26,77,143,0.25);
+}
+
+/* ─── FLOATING SIDEBAR ─── */
+.float-sidebar {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.fbtn {
+  background: var(--ink-2);
+  color: white;
+  padding: 13px 15px;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  min-width: 70px;
+  line-height: 1.4;
+  border-left: 2px solid transparent;
+  transition: all 0.25s;
+}
+
+.fbtn:hover {
+  background: var(--accent);
+  border-left-color: var(--gold);
+  transform: translateX(-4px);
+  color: white;
+}
+
+.fbtn.kakao {
+  background: #FEE500;
+  color: #191919;
+}
+
+.fbtn.kakao:hover {
+  background: #f5db00;
+  color: #191919;
+  border-left-color: #191919;
+}
+
+.fbtn span { font-size: 16px; display: block; margin-bottom: 3px; }
+
+.live-widget {
+  background: var(--ink-2);
+  border-left: 2px solid var(--gold);
+  padding: 12px 14px;
+  min-width: 160px;
+}
+
+.lw-header {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lw-item {
+  font-size: 10.5px;
+  color: rgba(255,255,255,0.65);
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  animation: fadeSlide 0.4s ease;
+}
+
+.lw-item:last-child { border-bottom: none; }
+.lw-item strong { color: var(--gold-lt); display: block; font-size: 11px; }
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--ink);
+  color: rgba(255,255,255,0.45);
+  padding: 64px 0 0;
+  border-top: 1px solid rgba(184,147,90,0.15);
+}
+
+.footer-inner { max-width: 1280px; margin: 0 auto; padding: 0 4rem; }
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-brand-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  color: white;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.footer-brand p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 1.2rem;
+}
+
+.footer-tel {
+  font-family: 'DM Mono', monospace;
+  font-size: 1.3rem;
+  color: white;
+  letter-spacing: -0.5px;
+}
+
+.footer-hours {
+  font-size: 11px;
+  color: rgba(255,255,255,0.25);
+  margin-top: 4px;
+}
+
+.footer-col-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.5px;
+  margin-bottom: 1.2rem;
+  text-transform: uppercase;
+}
+
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 0.7rem; }
+.footer-col ul li a {
+  font-size: 13px;
+  color: rgba(255,255,255,0.35);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-col ul li a:hover { color: var(--gold-lt); }
+
+.footer-addr { font-size: 13px; line-height: 2; color: rgba(255,255,255,0.35); }
+
+.footer-bottom {
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-links { display: flex; gap: 1.5rem; }
+.footer-links a {
+  font-size: 12px;
+  color: rgba(255,255,255,0.3);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--gold-lt); }
+.footer-copy { font-size: 12px; color: rgba(255,255,255,0.18); }
+.footer-biz { padding: 1.5rem 0 0; border-top: 1px solid rgba(255,255,255,0.08); }
+.footer-biz-name { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.45); margin-bottom: 0.6rem; }
+.footer-biz-info { font-size: 12px; line-height: 1.9; color: rgba(255,255,255,0.3); display: flex; flex-wrap: wrap; gap: 0 1.5rem; }
+.footer-biz-info span { white-space: nowrap; }
+@media (max-width: 768px) { .footer-biz-info span { white-space: normal; width: 100%; } }
+
+/* ─── MOBILE ─── */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--ink);
+  z-index: 99;
+  padding: 100px 2.5rem 2rem;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mobile-nav.open { display: flex; }
+
+.mobile-nav a {
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: color 0.2s;
+}
+
+.mobile-nav a:hover { color: var(--gold-lt); }
+
+/* ─── SCROLL REVEAL ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+.reveal-d4 { transition-delay: 0.4s; }
+.reveal-d5 { transition-delay: 0.5s; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1024px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .hero-left { padding: 6rem 3rem; }
+  .about-layout { grid-template-columns: 1fr; gap: 4rem; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .section-wrap { padding: 0 2rem; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  header { padding: 0 2rem; }
+}
+
+@media (max-width: 768px) {
+  nav { display: none; }
+  .hamburger { display: flex; }
+  .process-layout { grid-template-columns: 1fr; }
+  .process-layout::before { display: none; }
+  .notice-layout { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; }
+  .hero-stats { flex-wrap: wrap; gap: 1.5rem; }
+  .float-sidebar { display: none; }
+  .cases-header { flex-direction: column; align-items: flex-start; }
+  .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+  .about-stats { grid-template-columns: 1fr 1fr; }
+  header { padding: 0 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- FLOATING SIDEBAR -->
+<div class="float-sidebar">
+  <div class="live-widget">
+    <div class="lw-header">
+      <div class="live-dot"></div>
+      실시간 상담
+    </div>
+    <div id="liveList"></div>
+  </div>
+  <a href="tel:15663712" class="fbtn"><span>📞</span>전화상담</a>
+  <a href="#" class="fbtn kakao"><span>💬</span>카카오톡</a>
+  <a href="#consult" class="fbtn"><span>✍️</span>무료상담</a>
+</div>
+
+<!-- HEADER -->
+<header id="header">
+  <a href="#" class="logo">
+    <span class="logo-em">AR</span>
+    <span class="logo-kr">에이알자산관리</span>
+  </a>
+
+  <nav id="mainNav">
+    <a href="#cases">진행사례</a>
+    <a href="#services">서비스</a>
+    <a href="#about">회사소개</a>
+    <a href="#process">컨설팅프로세스</a>
+    <a href="#consult">공지/문의</a>
+    <a href="#consult" class="nav-cta">무료상담 신청</a>
+  </nav>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#cases" onclick="toggleMenu()">진행사례</a>
+  <a href="#services" onclick="toggleMenu()">서비스</a>
+  <a href="#about" onclick="toggleMenu()">회사소개</a>
+  <a href="#process" onclick="toggleMenu()">컨설팅 프로세스</a>
+  <a href="#consult" onclick="toggleMenu()">공지 / 문의</a>
+  <a href="#consult" onclick="toggleMenu()" style="color:var(--gold-lt); font-weight:700; margin-top:1rem;">→ 무료상담 신청</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-left">
+    <div class="hero-label">중소기업 종합 경영컨설팅</div>
+    <h1>기업의 <em>성장</em>을<br>함께 설계합니다</h1>
+    <p class="hero-desc">
+      법인설립부터 세금절세, 정부지원금 확보, 기업인증, 스마트팩토리까지 — 중소기업 대표님의 모든 경영 고민을 원스톱으로 해결합니다.
+    </p>
+    <div class="hero-actions">
+      <a href="#consult" class="btn-gold">무료 상담 신청 →</a>
+      <a href="#services" class="btn-ghost">서비스 살펴보기</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hstat-num">2,400<span>+</span></div>
+        <div class="hstat-label">누적 컨설팅 실적</div>
+      </div>
+      <div>
+        <div class="hstat-num">850<span>억+</span></div>
+        <div class="hstat-label">지원금 확보 실적</div>
+      </div>
+      <div>
+        <div class="hstat-num">15<span>년</span></div>
+        <div class="hstat-label">전문 컨설팅 경력</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-visual">
+      <div class="hero-arch">
+        <div class="hero-arch-fill"></div>
+        <div class="hero-arch-content">
+          <span class="arch-icon">🏛️</span>
+          <div class="arch-text">기업의 성장을<br>함께하는 파트너</div>
+          <div class="arch-sub">Since 2010 · 수성구 지산로</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ticker -->
+    <div class="hero-ticker">
+      <div class="ticker-label"><div class="live-dot"></div>LIVE</div>
+      <div class="ticker-scroll">
+        <div class="ticker-inner" id="tickerInner">
+          <span class="ticker-item"><strong>제조업 법인</strong> 스마트팩토리 문의</span>
+          <span class="ticker-item"><strong>IT 스타트업</strong> 법인설립 컨설팅</span>
+          <span class="ticker-item"><strong>건설업</strong> 세금절세 상담</span>
+          <span class="ticker-item"><strong>유통 중소기업</strong> 정부지원금 안내</span>
+          <span class="ticker-item"><strong>식품제조업</strong> ESG경영 도입</span>
+          <span class="ticker-item"><strong>서비스업</strong> 기업인증 취득</span>
+          <span class="ticker-item"><strong>물류업체</strong> 스마트팩토리 지원금</span>
+          <span class="ticker-item"><strong>바이오 스타트업</strong> 벤처인증 신청</span>
+          <span class="ticker-item"><strong>제조업 법인</strong> 스마트팩토리 문의</span>
+          <span class="ticker-item"><strong>IT 스타트업</strong> 법인설립 컨설팅</span>
+          <span class="ticker-item"><strong>건설업</strong> 세금절세 상담</span>
+          <span class="ticker-item"><strong>유통 중소기업</strong> 정부지원금 안내</span>
+          <span class="ticker-item"><strong>식품제조업</strong> ESG경영 도입</span>
+          <span class="ticker-item"><strong>서비스업</strong> 기업인증 취득</span>
+          <span class="ticker-item"><strong>물류업체</strong> 스마트팩토리 지원금</span>
+          <span class="ticker-item"><strong>바이오 스타트업</strong> 벤처인증 신청</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASES SECTION -->
+<section class="cases-section" id="cases">
+  <div class="section-wrap">
+    <div class="cases-header">
+      <div>
+        <div class="section-eyebrow reveal">Success Stories</div>
+        <h2 class="section-heading reveal reveal-d1">실제 <em>성과</em>로 증명합니다</h2>
+        <p class="section-note reveal reveal-d2" style="margin-top:1rem;">다양한 업종의 중소기업이 에이알자산관리와 함께 성장했습니다</p>
+      </div>
+      <div class="cases-nav-btns">
+        <button class="nav-btn" onclick="slideLeft()">←</button>
+        <button class="nav-btn" onclick="slideRight()">→</button>
+      </div>
+    </div>
+
+    <div class="cases-grid" id="casesTrack">
+      <div class="case-card">
+        <div class="case-top" style="background: linear-gradient(135deg,#e8f0fe,#c9d9ff);">
+          🏭
+          <span class="case-badge">정부지원금</span>
+        </div>
+        <div class="case-body">
+          <div class="case-industry">Manufacturing</div>
+          <div class="case-title">기계부품 제조업체 A사</div>
+          <div class="case-tags">
+            <span class="ctag">스마트팩토리</span>
+            <span class="ctag">정부지원금</span>
+          </div>
+          <div class="case-result">스마트팩토리 구축 지원금 <strong>3억 5천만원</strong> 확보 + 생산성 32% 향상</div>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-top" style="background: linear-gradient(135deg,#fef3e2,#fde7c0);">
+          💻
+          <span class="case-badge">법인설립</span>
+        </div>
+        <div class="case-body">
+          <div class="case-industry">IT / Software</div>
+          <div class="case-title">소프트웨어 스타트업 B사</div>
+          <div class="case-tags">
+            <span class="ctag">법인설립</span>
+            <span class="ctag">벤처인증</span>
+          </div>
+          <div class="case-result">법인설립 2주 완료 → 벤처기업 인증 취득 → R&D 세액공제 <strong>연 1.2억 절세</strong></div>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-top" style="background: linear-gradient(135deg,#e8fdf0,#c2f0d8);">
+          🏗️
+          <span class="case-badge">세금절세</span>
+        </div>
+        <div class="case-body">
+          <div class="case-industry">Construction</div>
+          <div class="case-title">건설 전문기업 C사</div>
+          <div class="case-tags">
+            <span class="ctag">세금절세</span>
+            <span class="ctag">법인전환</span>
+          </div>
+          <div class="case-result">개인→법인 전환으로 절세 <strong>연 8천만원</strong> + 신용보증 한도 3배 확대</div>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-top" style="background: linear-gradient(135deg,#fce8f3,#f9d0e8);">
+          🥗
+          <span class="case-badge">ESG경영</span>
+        </div>
+        <div class="case-body">
+          <div class="case-industry">Food & Beverage</div>
+          <div class="case-title">식품제조 D사</div>
+          <div class="case-tags">
+            <span class="ctag">ESG인증</span>
+            <span class="ctag">수출바우처</span>
+          </div>
+          <div class="case-result">ESG 우수기업 선정 → 수출바우처 <strong>5천만원</strong> + 대형유통사 납품 계약</div>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-top" style="background: linear-gradient(135deg,#e8f4fe,#c8e8ff);">
+          🚚
+          <span class="case-badge">기업인증</span>
+        </div>
+        <div class="case-body">
+          <div class="case-industry">Logistics</div>
+          <div class="case-title">물류 전문업체 E사</div>
+          <div class="case-tags">
+            <span class="ctag">이노비즈</span>
+            <span class="ctag">연구소설립</span>
+          </div>
+          <div class="case-result">이노비즈·메인비즈 동시 취득 → 금리 우대 + 정책자금 <strong>10억 확보</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:3rem;">
+      <a href="#" class="btn-gold">전체 사례 보기 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES SECTION -->
+<section class="services-section" id="services">
+  <div class="section-wrap">
+    <div class="services-header">
+      <div class="section-eyebrow reveal" style="color:var(--gold);">Our Services</div>
+      <h2 class="section-heading reveal reveal-d1" style="color:white;">기업 성장의 전 과정을<br><em style="color:var(--gold-lt);">원스톱으로</em> 지원합니다</h2>
+      <p class="section-note reveal reveal-d2" style="margin-top:1.2rem;">법인설립부터 ESG경영까지, 전문 컨설턴트가 함께합니다</p>
+    </div>
+
+    <div class="services-grid reveal reveal-d1">
+      <div class="svc-item">
+        <span class="svc-num">01</span>
+        <span class="svc-icon">🏢</span>
+        <div class="svc-name">법인설립 · 구조조정</div>
+        <div class="svc-desc">개인사업자 법인전환, 신규 법인설립, 지주회사 설계 등 기업 구조의 최적화</div>
+        <div class="svc-arrow">↗</div>
+      </div>
+      <div class="svc-item">
+        <span class="svc-num">02</span>
+        <span class="svc-icon">💰</span>
+        <div class="svc-name">세금절세 · 재무전략</div>
+        <div class="svc-desc">R&D 세액공제, 가업승계, 절세 설계, 재무구조 개선 등 합법적 절세 솔루션</div>
+        <div class="svc-arrow">↗</div>
+      </div>
+      <div class="svc-item">
+        <span class="svc-num">03</span>
+        <span class="svc-icon">🏛️</span>
+        <div class="svc-name">정부지원사업 · 무상지원금</div>
+        <div class="svc-desc">중소기업 R&D, 창업지원, 고용장려금, 설비자금 등 연간 수백억 규모 지원금 확보</div>
+        <div class="svc-arrow">↗</div>
+      </div>
+      <div class="svc-item">
+        <span class="svc-num">04</span>
+        <span class="svc-icon">🏅</span>
+        <div class="svc-name">기업인증 · 특허</div>
+        <div class="svc-desc">벤처기업, 이노비즈, 메인비즈, 기업부설연구소, ISO 인증 등 기업 신뢰도 제고</div>
+        <div class="svc-arrow">↗</div>
+      </div>
+      <div class="svc-item">
+        <span class="svc-num">05</span>
+        <span class="svc-icon">🤖</span>
+        <div class="svc-name">스마트팩토리</div>
+        <div class="svc-desc">제조 공정 디지털화, IoT·AI 도입, 스마트팩토리 구축 지원사업 연계</div>
+        <div class="svc-arrow">↗</div>
+      </div>
+      <div class="svc-item">
+        <span class="svc-num">06</span>
+        <span class="svc-icon">🌿</span>
+        <div class="svc-name">ESG 경영</div>
+        <div class="svc-desc">ESG 전략 수립, 친환경 인증, 사회적 책임 경영 도입으로 지속 성장 기반 마련</div>
+        <div class="svc-arrow">↗</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="about-section" id="about">
+  <div class="section-wrap">
+    <div class="about-layout">
+      <div class="about-stats reveal">
+        <div class="astat">
+          <div class="astat-num">2,400<span class="astat-unit">+</span></div>
+          <div class="astat-label">누적 컨설팅 실적</div>
+        </div>
+        <div class="astat">
+          <div class="astat-num" style="color:var(--accent);">98<span class="astat-unit">%</span></div>
+          <div class="astat-label">고객 만족도</div>
+        </div>
+        <div class="astat">
+          <div class="astat-num" style="color:var(--accent);">850<span class="astat-unit">억+</span></div>
+          <div class="astat-label">지원금 확보 실적</div>
+        </div>
+        <div class="astat">
+          <div class="astat-num" style="color:var(--accent);">15<span class="astat-unit">년</span></div>
+          <div class="astat-label">전문 컨설팅 경력</div>
+        </div>
+      </div>
+
+      <div class="about-text-wrap">
+        <div class="section-eyebrow reveal">About Us</div>
+        <h2 class="section-heading reveal reveal-d1">중소기업 대표님의<br><em>신뢰할 수 있는</em> 동반자</h2>
+        <p class="about-para reveal reveal-d2" style="margin-top:1.5rem;">
+          에이알자산관리는 중소기업 대표님들의 경영 고민을 함께 해결하는 종합 경영컨설팅 전문기관입니다. 법인 설립부터 세금 절세, 정부지원금 확보, 기업 인증, 스마트팩토리 구축까지 기업 성장의 전 과정을 함께합니다.
+        </p>
+        <div class="about-links-list reveal reveal-d3">
+          <a href="#" class="alink">
+            <span class="alink-icon">🏛️</span>
+            <span style="flex:1;">회사소개 자세히 보기</span>
+            <span>→</span>
+          </a>
+          <a href="#process" class="alink">
+            <span class="alink-icon">🔄</span>
+            <span style="flex:1;">컨설팅 프로세스 확인</span>
+            <span>→</span>
+          </a>
+          <a href="#" class="alink">
+            <span class="alink-icon">📍</span>
+            <span style="flex:1;">오시는 길 안내</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Partners -->
+    <div class="partners-row reveal">
+      <div class="partners-label">Our Partners</div>
+      <div class="partners-scroll">
+        <div class="partners-inner" id="partnersInner">
+          <span class="p-logo">중소벤처기업부</span>
+          <span class="p-logo">한국산업기술진흥원</span>
+          <span class="p-logo">신용보증기금</span>
+          <span class="p-logo">기술보증기금</span>
+          <span class="p-logo">중소기업진흥공단</span>
+          <span class="p-logo">특허청</span>
+          <span class="p-logo">창업진흥원</span>
+          <span class="p-logo">한국표준협회</span>
+          <span class="p-logo">중소벤처기업부</span>
+          <span class="p-logo">한국산업기술진흥원</span>
+          <span class="p-logo">신용보증기금</span>
+          <span class="p-logo">기술보증기금</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS SECTION -->
+<section class="process-section" id="process">
+  <div class="section-wrap">
+    <div style="text-align:center;">
+      <div class="section-eyebrow reveal" style="justify-content:center;">Consulting Process</div>
+      <h2 class="section-heading reveal reveal-d1" style="text-align:center;">5단계 체계적 <em>프로세스</em></h2>
+      <p class="section-note reveal reveal-d2" style="text-align:center; margin:1rem auto 0;">검증된 방법론으로 최적의 결과를 이끌어냅니다</p>
+    </div>
+
+    <div class="process-layout">
+      <div class="proc-step reveal reveal-d1">
+        <div class="proc-num">01</div>
+        <div class="proc-title">무료 상담 신청</div>
+        <div class="proc-desc">온라인·전화·카카오톡으로 편리하게 상담 신청</div>
+      </div>
+      <div class="proc-step reveal reveal-d2">
+        <div class="proc-num">02</div>
+        <div class="proc-title">기업 현황 분석</div>
+        <div class="proc-desc">업종, 매출, 인원 등 기업 현황 심층 분석</div>
+      </div>
+      <div class="proc-step reveal reveal-d3">
+        <div class="proc-num">03</div>
+        <div class="proc-title">맞춤 전략 수립</div>
+        <div class="proc-desc">기업별 최적화된 컨설팅 솔루션 제안</div>
+      </div>
+      <div class="proc-step reveal reveal-d4">
+        <div class="proc-num">04</div>
+        <div class="proc-title">실행 및 지원</div>
+        <div class="proc-desc">서류 준비부터 신청까지 원스톱 대행 서비스</div>
+      </div>
+      <div class="proc-step reveal reveal-d5">
+        <div class="proc-num">05</div>
+        <div class="proc-title">사후 관리</div>
+        <div class="proc-desc">컨설팅 완료 후 지속적인 모니터링 및 관리</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOTICE + FORM -->
+<section class="notice-section" id="consult">
+  <div class="section-wrap">
+    <div class="notice-layout">
+      <div class="notice-box nb-dark reveal">
+        <div class="nb-title">📢 공지사항</div>
+        <ul class="notice-list">
+          <li>
+            <span>2025년 상반기 스마트팩토리 지원사업 모집 안내</span>
+            <span class="ndate">25.05.20</span>
+          </li>
+          <li>
+            <span>벤처기업확인제도 개편 관련 안내사항</span>
+            <span class="ndate">25.05.15</span>
+          </li>
+          <li>
+            <span>2025년 ESG 경영 우수기업 선정 지원사업 공고</span>
+            <span class="ndate">25.05.08</span>
+          </li>
+          <li>
+            <span>소상공인 정책자금 금리 인하 안내</span>
+            <span class="ndate">25.04.28</span>
+          </li>
+          <li>
+            <span>기업부설연구소 신고 서류 변경 안내</span>
+            <span class="ndate">25.04.20</span>
+          </li>
+        </ul>
+        <a href="#" class="btn-outline-gold">공지사항 더보기 →</a>
+      </div>
+
+      <div class="notice-box nb-light reveal reveal-d2">
+        <div class="nb-title">💬 무료 상담 신청</div>
+        <div class="form-stack">
+          <div class="form-row">
+            <input class="finput" type="text" placeholder="성함">
+            <input class="finput" type="tel" placeholder="연락처">
+          </div>
+          <div class="form-row">
+            <input class="finput" type="text" placeholder="업종">
+            <select class="finput">
+              <option value="">매출 규모 선택</option>
+              <option>5억 미만</option>
+              <option>5억 ~ 20억</option>
+              <option>20억 ~ 50억</option>
+              <option>50억 ~ 100억</option>
+              <option>100억 이상</option>
+            </select>
+          </div>
+          <textarea class="finput ftextarea" placeholder="문의 내용을 입력해 주세요"></textarea>
+          <label class="fcheck">
+            <input type="checkbox" id="agree">
+            개인정보 수집·이용에 동의합니다 (필수)
+          </label>
+          <button class="fsubmit" onclick="submitForm()">무료 상담 신청하기 →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="footer-brand-name">에이알자산관리</span>
+        <p>중소기업의 성장을 함께하는 종합 경영컨설팅 전문기관. 법인설립부터 ESG경영까지 기업 성장의 모든 과정을 지원합니다.</p>
+        <div class="footer-tel">1566-3712</div>
+        <div class="footer-hours">평일 09:00 ~ 18:00 (점심 12:00 ~ 13:00)</div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Services</div>
+        <ul>
+          <li><a href="#">기업컨설팅</a></li>
+          <li><a href="#">무상지원금</a></li>
+          <li><a href="#">재무·세무</a></li>
+          <li><a href="#">특허·인증</a></li>
+          <li><a href="#">스마트팩토리</a></li>
+          <li><a href="#">ESG경영</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <ul>
+          <li><a href="#">회사소개</a></li>
+          <li><a href="#process">컨설팅 프로세스</a></li>
+          <li><a href="#">진행사례</a></li>
+          <li><a href="#">공지사항</a></li>
+          <li><a href="#">오시는 길</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-addr">
+          대구광역시 수성구<br>
+          지산로3길33<br>
+          107동 1002호<br><br>
+          FAX 0508-955-6663<br>
+          info@ar-asset.co.kr
+        </div>
+      </div>
+    </div>
+    <div class="footer-biz">
+      <div class="footer-biz-name">에이알 자산관리센터</div>
+      <div class="footer-biz-info">
+        <span>대표자 : 최아름</span>
+        <span>사업자명(상호) : 에이알자산관리</span>
+        <span>사업자등록번호 : 690-15-02673</span>
+        <span>사업장 소재지 : 대구광역시 수성구 지산로3길33 107동 1002호</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-links">
+        <a href="#">개인정보처리방침</a>
+        <a href="#">이메일 무단수집 거부</a>
+        <a href="#">공지사항</a>
+      </div>
+      <div class="footer-copy">© 2026 에이알 자산관리센터. All Rights Reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Mobile menu
+function toggleMenu() {
+  document.getElementById('mobileNav').classList.toggle('open');
+}
+
+// Scroll reveal
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+revealEls.forEach(el => io.observe(el));
+
+// Cases slider
+function slideRight() { document.getElementById('casesTrack').scrollBy({ left: 320, behavior: 'smooth' }); }
+function slideLeft() { document.getElementById('casesTrack').scrollBy({ left: -320, behavior: 'smooth' }); }
+
+// Live consulting widget
+const liveData = [
+  ['제조업 법인', '스마트팩토리 문의'],
+  ['IT 스타트업', '법인설립 컨설팅'],
+  ['건설업 개인사업자', '세금절세 상담'],
+  ['유통업 중소기업', '정부지원금 안내'],
+  ['식품제조업 법인', 'ESG경영 도입 문의'],
+  ['서비스업 대표님', '기업인증 취득 상담'],
+  ['물류 전문업체', '스마트팩토리 지원금'],
+  ['바이오 스타트업', '벤처인증 신청'],
+];
+
+let liveIdx = 0;
+function updateLive() {
+  const list = document.getElementById('liveList');
+  if (!list) return;
+  const items = liveData.slice(liveIdx % liveData.length, (liveIdx % liveData.length) + 3);
+  liveIdx++;
+  list.innerHTML = items.map(([n, s]) =>
+    `<div class="lw-item"><strong>${n}</strong>${s}</div>`
+  ).join('');
+}
+updateLive();
+setInterval(updateLive, 3500);
+
+// Partners auto-scroll
+const partners = document.getElementById('partnersInner');
+let pos = 0;
+if (partners) {
+  setInterval(() => {
+    pos += 0.6;
+    if (pos >= partners.scrollWidth / 2) pos = 0;
+    partners.parentElement.scrollLeft = pos;
+  }, 16);
+}
+
+// Header scroll
+window.addEventListener('scroll', () => {
+  const h = document.getElementById('header');
+  h.style.background = window.scrollY > 60
+    ? 'rgba(247,244,239,0.98)'
+    : 'rgba(247,244,239,0.92)';
+});
+
+// Form submit
+function submitForm() {
+  const cb = document.getElementById('agree');
+  if (!cb.checked) { alert('개인정보 수집·이용에 동의해 주세요.'); return; }
+  alert('상담 신청이 완료되었습니다!\n담당 컨설턴트가 24시간 이내에 연락드리겠습니다. 감사합니다 😊');
+}
+</script>
+</body>
+</html>
